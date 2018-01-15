@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "target": "ES5",
+    "noEmitOnError": false,
+    "jsx": "react",
+    "outDir": "assets",
+    "lib": [
+      "es2015",
+      "es2016",
+      "dom"
+    ]
+  },
+  "compileOnSave": false,
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -1,8 +1,11 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import {
-    Route,
+    BrowserRouter as Router,
+    Route
 } from 'react-router-dom'
+
+import { BarExample } from '../components/example/bar.example'
 
 class App extends React.Component<any, any>{
     constructor(props: any, context: any) {
@@ -15,12 +18,15 @@ class App extends React.Component<any, any>{
     render() {
         return (
             <div>
-                App
-                {/* <Route path={this.props.path} component={this.props.component} /> */}
+                <Router>
+                    <div>
+                        <Route path='/index' component={BarExample} />
+                        <Route path='/bar' component={BarExample} />
+                    </div>
+                </Router>
             </div>
         )
     }
 }
-// const mapToState = () => { }
-// const mapToProps = () => { }
+
 export default connect()(App)

@@ -46,6 +46,23 @@ module.exports = {
         rules: [
             { test: /\.tsx?$/, loader: 'ts-loader' },
             {
+                test: /\.less$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        {
+                            loader: 'css-loader',
+                            options: {
+                                minimize: true,
+                                importLoaders: 1,
+                            }
+                        }, {
+                            loader: 'less-loader'
+                        }
+                    ]
+                })
+            },
+            {
                 test: /\.css$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -106,7 +123,7 @@ module.exports = {
         port: 9000,
         index: 'index.html',
         open: true,
-        openPage: 'public/assets/',
+        openPage: 'index/',
         inline: true,
         // host: '192.168.9.151'
         // proxy: {

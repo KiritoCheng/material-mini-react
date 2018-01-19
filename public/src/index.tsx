@@ -8,10 +8,11 @@ import injectTapEventPlugin = require("react-tap-event-plugin");
 
 injectTapEventPlugin();
 
+import './components/base.less';
 import App from './containers/app';
 import reducer from './reducers';
 
-const store = createStore(reducer, applyMiddleware(ReduxThunk));
+const store = createStore(reducer,null, applyMiddleware(ReduxThunk));
 
 ReactDOM.render<any>(
     <Provider store={store}>
